@@ -1,0 +1,17 @@
+﻿<div class="pageitem" v-bind:style="outstyle" v-on:mousedown="showmousedown(window.event)" v-on:mouseup="mouseup(window.event)" v-on:mousemove="mousemove(window.event)">
+    <div draggable="true" name="pagefont" class="comp-resize defaultfontstyle" v-bind:style="innerstyle">
+        <div class="bar bar-n" style="cursor: n-resize" v-if="editshow"><div class="bar-radius"></div></div>
+        <div class="bar bar-s" style="cursor: s-resize" v-if="editshow"><div class="bar-radius"></div></div>
+        <div class="bar bar-e" style="cursor: e-resize" v-if="editshow"><div class="bar-radius"></div></div>
+        <div class="bar bar-w" style="cursor: w-resize" v-if="editshow"><div class="bar-radius"></div></div>
+        <div class="bar bar-nw bar-radius" style="cursor: nw-resize" v-if="editshow"></div>
+        <div class="bar bar-se bar-radius" style="cursor: se-resize" v-if="editshow"></div>
+        <div class="bar bar-sw bar-radius" style="cursor: sw-resize" v-if="editshow"></div>
+        <div class="bar bar-ne bar-radius" style="cursor: ne-resize" v-if="editshow"></div>
+        <span v-if="comtype==1" v-html="comtitle" style="display: block; width: 100%; height: 100%; overflow: hidden; box-sizing: border-box; font-family: 默认字体;"></span>
+        <img v-if="comtype==2" v-bind:src="imgsrc" style="display: block; width: 100%; height: 100%; overflow: hidden; box-sizing: border-box;" />
+        <a v-if="comtype==3" class="buttontype1" style="display: block; width: 100%; height: 100%; overflow: hidden; box-sizing: border-box;">{{comtitle}}</a>
+        <input v-if="comtype==4" v-bind:placeholder="complaceholder" style="display: block; width: 100%; height: 100%; overflow: hidden; box-sizing: border-box;" />
+        <!--根据需求此处继续添加不同元素-->
+    </div>
+</div>
